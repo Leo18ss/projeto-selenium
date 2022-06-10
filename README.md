@@ -5,13 +5,13 @@
 ## Participantes :man:
 
 - Danilo
-- Leonardo Silva de Souza - [E-mail para contato](leonardosilva@gec.inatel.br)
+- Leonardo Silva de Souza - leonardosilva@gec.inatel.br
 
 ## Ferramentas utilizadas :computer:
 
-#### Durante o desenvolvimento foi utilizado o [Flutter](https://flutter.dev/) que é um framework de aplicações Mobile com desenvolvimento híbrido e de fácil aprendizado, sua documentação oficial pode ser encontrada [aqui](https://docs.flutter.dev/).
+#### Durante o desenvolvimento foi utilizado o [Selenium IDE](https://www.selenium.dev/selenium-ide/) que é uma ferramenta de codigo aberto para fazer testes automazidos e gravacao na web, que possui facil aprendizado, sua documentação oficial pode ser encontrada [aqui](https://www.selenium.dev/selenium-ide/docs/en/introduction/getting-started).
 
-#### Para instalar o Flutter, voce pode baixado de sua pagina oficial aqui: [Windows Download](https://docs.flutter.dev/get-started/install/windows)
+#### Para sua utilizacao, existem 3 ferramentas: O [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/), [Selenium Grid](https://www.selenium.dev/documentation/grid/) e o [Selenium IDE](https://www.selenium.dev/selenium-ide/) que foi o que utilizamos, cada com um proposito diferente, sendo respectivamente: Um sistema robusto de criacao de suites de teste de regressao para Web, Um sistema que escalona diversos testes em maquinas diferentes para apresentar os resultado em apenas um ponto, e por fim, uma ferramenta para criar testes web com debug e script rapidos multinavegadores.
 
 #### Em caso de instação para Linux, via terminal, rode o comando:
 
@@ -33,9 +33,3 @@
 ```
   flutter test
 ```
-
-## Conteudo apresentado:
-
-- [ ] Aula de Revisao de POO
-- [X] Aula de Testes de Unidade
-- [X] Aula de Testes Mock
