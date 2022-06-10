@@ -1,0 +1,49 @@
+{
+  "id": "2214a625-87ac-4b28-b47b-abcc80b904e2",
+  "version": "2.0",
+  "name": "projetoS206",
+  "url": "",
+  "tests": [{
+    "id": "100f7ab3-687b-4668-9ceb-a1d40790b36a",
+    "name": "Busca Inatel",
+    "commands": [{
+      "id": "f0f5ffea-780f-4551-aafc-ceb9c57030b3",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.google.com.br/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "da663834-9550-44c5-8bbf-dce2f88b23dc",
+      "comment": "",
+      "command": "click",
+      "target": "name=q",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "102734af-5c0d-46bb-b28b-d81327b99cd8",
+      "comment": "",
+      "command": "type",
+      "target": "name=q",
+      "targets": [],
+      "value": "Inatel"
+    }, {
+      "id": "6c35ab83-daf3-4567-be08-ec5ee32d1805",
+      "comment": "",
+      "command": "click",
+      "target": "name=btnK",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "2e6abf18-8eb3-4776-a0f6-0f52edfd79fa",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["100f7ab3-687b-4668-9ceb-a1d40790b36a"]
+  }],
+  "urls": [],
+  "plugins": []
+}
