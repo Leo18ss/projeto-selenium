@@ -2,48 +2,453 @@
   "id": "2214a625-87ac-4b28-b47b-abcc80b904e2",
   "version": "2.0",
   "name": "projetoS206",
-  "url": "",
+  "url": "http://automationpractice.com/",
   "tests": [{
     "id": "100f7ab3-687b-4668-9ceb-a1d40790b36a",
     "name": "Busca Inatel",
     "commands": [{
       "id": "f0f5ffea-780f-4551-aafc-ceb9c57030b3",
-      "comment": "",
+      "comment": "Abre o site de pesquisa do Google. ",
       "command": "open",
       "target": "https://www.google.com.br/",
       "targets": [],
       "value": ""
     }, {
       "id": "da663834-9550-44c5-8bbf-dce2f88b23dc",
-      "comment": "",
+      "comment": "Clica na barra de busca",
       "command": "click",
       "target": "name=q",
       "targets": [],
       "value": ""
     }, {
       "id": "102734af-5c0d-46bb-b28b-d81327b99cd8",
-      "comment": "",
+      "comment": "Digita Inatel",
       "command": "type",
       "target": "name=q",
       "targets": [],
       "value": "Inatel"
     }, {
       "id": "6c35ab83-daf3-4567-be08-ec5ee32d1805",
-      "comment": "",
+      "comment": "Clica no botão de busca",
       "command": "click",
       "target": "name=btnK",
       "targets": [],
       "value": ""
+    }, {
+      "id": "15bd7bef-fcc2-409d-ad64-725faef0e0f1",
+      "comment": "Seleciona o primeiro resultado",
+      "command": "click",
+      "target": "css=.g:nth-child(1) > div:nth-child(2) .LC20lb",
+      "targets": [
+        ["css=.g:nth-child(1) > div:nth-child(2) .LC20lb", "css:finder"],
+        ["xpath=//div[@id='rso']/div/div/div/div/div/div/div/div/a/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Inatel: Instituto Nacional de Telecomunicações')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "829d9153-4c34-473b-971d-029393702997",
+      "comment": "Deve encontrar o texto \"Tecnologia é uma jornada.\" .",
+      "command": "assertText",
+      "target": "css=.colorfff:nth-child(1)",
+      "targets": [
+        ["css=.colorfff:nth-child(1)", "css:finder"],
+        ["xpath=//header[@id='sliderBanner']/div/div/div/div/div/spam/spam/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Tecnologia é uma jornada.')]", "xpath:innerText"]
+      ],
+      "value": "Tecnologia é uma jornada."
+    }]
+  }, {
+    "id": "c23991bd-90c7-4b78-8f1f-6151cd1db5de",
+    "name": "Pesquisa de Produtos",
+    "commands": [{
+      "id": "ea0da592-b11a-4dac-b6e2-f660320b6d17",
+      "comment": "Visita o site http://automationpractice.com/",
+      "command": "open",
+      "target": "http://automationpractice.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "41c87ec2-17a4-4717-a040-01c2739314b0",
+      "comment": "Digita \"t-shirts\" na barra de pesquisa do site",
+      "command": "type",
+      "target": "id=search_query_top",
+      "targets": [
+        ["id=search_query_top", "id"],
+        ["name=search_query", "name"],
+        ["css=#search_query_top", "css:finder"],
+        ["xpath=//input[@id='search_query_top']", "xpath:attributes"],
+        ["xpath=//form[@id='searchbox']/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "t-shirts"
+    }, {
+      "id": "d074e1b2-88b1-4f12-959d-b1848e8e4c40",
+      "comment": "Clica no botão buscar",
+      "command": "click",
+      "target": "name=submit_search",
+      "targets": [
+        ["name=submit_search", "name"],
+        ["css=.button-search", "css:finder"],
+        ["xpath=//button[@name='submit_search']", "xpath:attributes"],
+        ["xpath=//form[@id='searchbox']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fad43346-60fe-4087-ad1b-ff42cca0708f",
+      "comment": "Deve encontrar pelo menos 1 resultado",
+      "command": "assertText",
+      "target": "css=.top-pagination-content > .product-count",
+      "targets": [
+        ["css=.top-pagination-content > .product-count", "css:finder"],
+        ["xpath=//div[@id='center_column']/div/div[2]/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div[2]", "xpath:position"]
+      ],
+      "value": "Showing 1 - 1 of 1 item"
+    }]
+  }, {
+    "id": "1c578d0b-17f9-4861-888f-a7746be09296",
+    "name": "Tentativa de Sign in",
+    "commands": [{
+      "id": "38ab9380-e645-4798-87f0-bd6871ec75fd",
+      "comment": "Visita o site http://automationpractice.com/",
+      "command": "open",
+      "target": "http://automationpractice.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2b436a34-50bf-48e8-b947-18ffe8128262",
+      "comment": "Clica no botão de Sign in",
+      "command": "click",
+      "target": "linkText=Sign in",
+      "targets": [
+        ["linkText=Sign in", "linkText"],
+        ["css=.login", "css:finder"],
+        ["xpath=//a[contains(text(),'Sign in')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div[2]/div/div/nav/div/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://automationpractice.com/index.php?controller=my-account']", "xpath:href"],
+        ["xpath=//nav/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sign in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7a080523-42b6-47cb-bfb1-1875a1062c84",
+      "comment": "Digita um user cadastrado",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//form[@id='login_form']/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/form/div/div/input", "xpath:position"]
+      ],
+      "value": "user@test.com"
+    }, {
+      "id": "59799bd6-bc0f-4ded-aaad-18eacb6a5781",
+      "comment": "Digita a senha errada do user",
+      "command": "type",
+      "target": "id=passwd",
+      "targets": [],
+      "value": "123456"
+    }, {
+      "id": "c5e906de-557e-452f-a64c-c63d760ef258",
+      "comment": "Clica no botão para realizar o Sign in",
+      "command": "click",
+      "target": "css=#SubmitLogin > span",
+      "targets": [
+        ["css=#SubmitLogin > span", "css:finder"],
+        ["xpath=//button[@id='SubmitLogin']/span", "xpath:idRelative"],
+        ["xpath=//p[2]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dba6f04c-f5fb-49de-a372-d3e3eadecc39",
+      "comment": "Deve aparecer a mensagem de erro \"Authentication failed.\"",
+      "command": "assertText",
+      "target": "css=ol > li",
+      "targets": [
+        ["css=ol > li", "css:finder"],
+        ["xpath=//div[@id='center_column']/div/ol/li", "xpath:idRelative"],
+        ["xpath=//ol/li", "xpath:position"],
+        ["xpath=//li[contains(.,'Authentication failed.')]", "xpath:innerText"]
+      ],
+      "value": "Authentication failed."
+    }]
+  }, {
+    "id": "2879b6cc-a5ba-440a-867f-4a6289d5b498",
+    "name": "Criação de um novo usuário",
+    "commands": [{
+      "id": "62825920-39c9-4430-bb82-e3a9e6d90f62",
+      "comment": "Visita o site http://automationpractice.com/",
+      "command": "open",
+      "target": "http://automationpractice.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "19039f70-89ce-42f9-b5cf-ac70d4b98a31",
+      "comment": "Clica em Sign in",
+      "command": "click",
+      "target": "linkText=Sign in",
+      "targets": [
+        ["linkText=Sign in", "linkText"],
+        ["css=.login", "css:finder"],
+        ["xpath=//a[contains(text(),'Sign in')]", "xpath:link"],
+        ["xpath=//header[@id='header']/div[2]/div/div/nav/div/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://automationpractice.com/index.php?controller=my-account']", "xpath:href"],
+        ["xpath=//nav/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sign in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1a3d21b3-4452-4235-9ccf-d4d5b1409290",
+      "comment": "Digita o email inatel.user@test.com",
+      "command": "type",
+      "target": "id=email_create",
+      "targets": [
+        ["id=email_create", "id"],
+        ["name=email_create", "name"],
+        ["css=#email_create", "css:finder"],
+        ["xpath=//input[@id='email_create']", "xpath:attributes"],
+        ["xpath=//form[@id='create-account_form']/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "inatel.user@test.com"
+    }, {
+      "id": "3ad905be-9e91-4162-9839-50422a7e9e9d",
+      "comment": "Clica no botão para criar um novo usuário",
+      "command": "click",
+      "target": "css=#SubmitCreate > span",
+      "targets": [
+        ["css=#SubmitCreate > span", "css:finder"],
+        ["xpath=//button[@id='SubmitCreate']/span", "xpath:idRelative"],
+        ["xpath=//div[3]/button/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9b230cff-bf6a-4c08-ac1c-ae12a76b7908",
+      "comment": "Select title",
+      "command": "click",
+      "target": "id=id_gender1",
+      "targets": [
+        ["id=id_gender1", "id"],
+        ["name=id_gender", "name"],
+        ["css=#id_gender1", "css:finder"],
+        ["xpath=//input[@id='id_gender1']", "xpath:attributes"],
+        ["xpath=//div[@id='uniform-id_gender1']/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "957e6cb0-cbca-4191-94ae-59306e4f320a",
+      "comment": "Digita o primeiro nome",
+      "command": "type",
+      "target": "id=customer_firstname",
+      "targets": [
+        ["id=customer_firstname", "id"],
+        ["name=customer_firstname", "name"],
+        ["css=#customer_firstname", "css:finder"],
+        ["xpath=//input[@id='customer_firstname']", "xpath:attributes"],
+        ["xpath=//form[@id='account-creation_form']/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Nom"
+    }, {
+      "id": "a9dc40f7-d549-4ff5-901b-85fc4e24e345",
+      "comment": "Digita o último nome",
+      "command": "type",
+      "target": "id=customer_lastname",
+      "targets": [
+        ["id=customer_lastname", "id"],
+        ["name=customer_lastname", "name"],
+        ["css=#customer_lastname", "css:finder"],
+        ["xpath=//input[@id='customer_lastname']", "xpath:attributes"],
+        ["xpath=//form[@id='account-creation_form']/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "Segundo"
+    }, {
+      "id": "e89848a4-1355-40dd-8e3c-04010ea4dce5",
+      "comment": "Digita o email inatel.user@test.com",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//form[@id='account-creation_form']/div/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "inatel.user@test.com"
+    }, {
+      "id": "01a007e9-b5ae-4a72-ae46-adc250d62ce3",
+      "comment": "Digita um novo password",
+      "command": "type",
+      "target": "id=passwd",
+      "targets": [
+        ["id=passwd", "id"],
+        ["name=passwd", "name"],
+        ["css=#passwd", "css:finder"],
+        ["xpath=//input[@id='passwd']", "xpath:attributes"],
+        ["xpath=//form[@id='account-creation_form']/div/div[5]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/input", "xpath:position"]
+      ],
+      "value": "123456"
+    }, {
+      "id": "bdbdb74a-222b-4a88-bbed-636a7eb8a19f",
+      "comment": "Check for newsletter",
+      "command": "click",
+      "target": "id=newsletter",
+      "targets": [
+        ["id=newsletter", "id"],
+        ["name=newsletter", "name"],
+        ["css=#newsletter", "css:finder"],
+        ["xpath=//input[@id='newsletter']", "xpath:attributes"],
+        ["xpath=//div[@id='uniform-newsletter']/span/input", "xpath:idRelative"],
+        ["xpath=//div[7]/div/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "53bf369c-3e5c-4783-a33a-f7ccd9c15f38",
+      "comment": "Digita o endereço",
+      "command": "type",
+      "target": "id=address1",
+      "targets": [
+        ["id=address1", "id"],
+        ["name=address1", "name"],
+        ["css=#address1", "css:finder"],
+        ["xpath=//input[@id='address1']", "xpath:attributes"],
+        ["xpath=//form[@id='account-creation_form']/div[2]/p[4]/input", "xpath:idRelative"],
+        ["xpath=//p[4]/input", "xpath:position"]
+      ],
+      "value": "Rua das Flores"
+    }, {
+      "id": "8039a359-e76b-4ff4-ab4e-64345d132559",
+      "comment": "Digita a cidade",
+      "command": "type",
+      "target": "id=city",
+      "targets": [
+        ["id=city", "id"],
+        ["name=city", "name"],
+        ["css=#city", "css:finder"],
+        ["xpath=//input[@id='city']", "xpath:attributes"],
+        ["xpath=//form[@id='account-creation_form']/div[2]/p[6]/input", "xpath:idRelative"],
+        ["xpath=//p[6]/input", "xpath:position"]
+      ],
+      "value": "Santa Rita do Sapucaí"
+    }, {
+      "id": "e2f2d697-befb-4411-b9ca-28f7fb6bd09b",
+      "comment": "Seleciona o estado",
+      "command": "select",
+      "target": "id=id_state",
+      "targets": [
+        ["id=id_state", "id"],
+        ["name=id_state", "name"],
+        ["css=#id_state", "css:finder"],
+        ["xpath=//select[@id='id_state']", "xpath:attributes"],
+        ["xpath=//div[@id='uniform-id_state']/select", "xpath:idRelative"],
+        ["xpath=//p[7]/div/select", "xpath:position"]
+      ],
+      "value": "Florida"
+    }, {
+      "id": "66250ab2-5e05-4164-a01a-03eb2e3dc630",
+      "comment": "Digita o CEP",
+      "command": "type",
+      "target": "css=.postcode",
+      "targets": [
+        ["css=.postcode", "css:finder"],
+        ["xpath=//form[@id='account-creation_form']/div[2]/p[8]", "xpath:idRelative"],
+        ["xpath=//p[8]", "xpath:position"],
+        ["xpath=//p[contains(.,'Zip/Postal Code *')]", "xpath:innerText"]
+      ],
+      "value": "37550"
+    }, {
+      "id": "acf3a1da-3077-402b-b744-f97f698756e2",
+      "comment": "Seleciona o país",
+      "command": "select",
+      "target": "id=id_country",
+      "targets": [
+        ["id=id_country", "id"],
+        ["name=id_country", "name"],
+        ["css=#id_country", "css:finder"],
+        ["xpath=//select[@id='id_country']", "xpath:attributes"],
+        ["xpath=//div[@id='uniform-id_country']/select", "xpath:idRelative"],
+        ["xpath=//p[9]/div/select", "xpath:position"]
+      ],
+      "value": "United States"
+    }, {
+      "id": "a7b1f3fc-56f3-4a3c-a312-1451db72a2bf",
+      "comment": "Digita o celular",
+      "command": "type",
+      "target": "id=phone_mobile",
+      "targets": [
+        ["id=phone_mobile", "id"],
+        ["name=phone_mobile", "name"],
+        ["css=#phone_mobile", "css:finder"],
+        ["xpath=//input[@id='phone_mobile']", "xpath:attributes"],
+        ["xpath=//form[@id='account-creation_form']/div[2]/p[13]/input", "xpath:idRelative"],
+        ["xpath=//p[13]/input", "xpath:position"]
+      ],
+      "value": "9999-9999"
+    }, {
+      "id": "862332c9-a365-4ab9-b1cd-7b5b82aabf57",
+      "comment": "Digita apelido para o endereço",
+      "command": "type",
+      "target": "id=alias",
+      "targets": [
+        ["id=alias", "id"],
+        ["name=alias", "name"],
+        ["css=#alias", "css:finder"],
+        ["xpath=//input[@id='alias']", "xpath:attributes"],
+        ["xpath=//p[@id='address_alias']/input", "xpath:idRelative"],
+        ["xpath=//p[14]/input", "xpath:position"]
+      ],
+      "value": "casa"
+    }, {
+      "id": "e999d175-9900-4a57-b74c-7d8307584dec",
+      "comment": "Clica para registrar",
+      "command": "click",
+      "target": "css=#submitAccount > span",
+      "targets": [
+        ["css=#submitAccount > span", "css:finder"],
+        ["xpath=//button[@id='submitAccount']/span", "xpath:idRelative"],
+        ["xpath=//div[4]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Register')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bab6eb0a-7417-4708-b845-d00cfaf060ba",
+      "comment": "Deve conter frade de boas vindas",
+      "command": "assertText",
+      "target": "css=.info-account",
+      "targets": [
+        ["css=.info-account", "css:finder"],
+        ["xpath=//div[@id='center_column']/p", "xpath:idRelative"],
+        ["xpath=//div[3]/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Welcome to your account. Here you can manage all of your personal information and orders.')]", "xpath:innerText"]
+      ],
+      "value": "Welcome to your account. Here you can manage all of your personal information and orders."
     }]
   }],
   "suites": [{
     "id": "2e6abf18-8eb3-4776-a0f6-0f52edfd79fa",
-    "name": "Default Suite",
+    "name": "Suite de Testes",
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
     "tests": ["100f7ab3-687b-4668-9ceb-a1d40790b36a"]
+  }, {
+    "id": "69848cdb-e6c1-40a6-851b-0c8906445622",
+    "name": "Automation Practice",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["c23991bd-90c7-4b78-8f1f-6151cd1db5de", "1c578d0b-17f9-4861-888f-a7746be09296"]
   }],
-  "urls": [],
+  "urls": ["https://www.google.com.br/", "http://automationpractice.com/"],
   "plugins": []
 }
