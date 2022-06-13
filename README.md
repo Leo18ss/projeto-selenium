@@ -17,9 +17,7 @@ Para sua utilização, existem 3 ferramentas: O [Selenium WebDriver](https://www
 
 ### Instalação
 
-Para instalar a ferramenta no browser, basta clicar no link abaixo e escolher qual browser você deseja utilizar.
-
-    [https://www.selenium.dev/selenium-ide/](https://www.selenium.dev/selenium-ide/)
+Para instalar a ferramenta no browser, basta clicar [aqui](https://www.selenium.dev/selenium-ide/) e escolher qual browser você deseja utilizar.
 
 Ele irá redirecionar para a página da extensão do seu browser.
 
